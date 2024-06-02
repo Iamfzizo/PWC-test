@@ -14,6 +14,14 @@ This project is a web application that evaluates the responses of different larg
 
 ## Project Structure
 
+llm-evaluation/
+│
+├── backend.py
+├── requirements.txt
+├── static/
+│   └── index.html
+└── README.md
+
 
 ## Setup and Installation
 
@@ -29,3 +37,9 @@ This project is a web application that evaluates the responses of different larg
    ```bash
    git clone https://github.com/yourusername/llm-evaluation.git
    cd llm-evaluation
+2. Install Dependencies:
+   pip install -r requirements.txt
+   
+4. Run the Application:
+
+   python backend.py
