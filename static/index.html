@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LLM Evaluation</title>
+</head>
+<body>
+    <h1>LLM Evaluation</h1>
+    <input type="text" id="userPrompt" placeholder="Enter your prompt here">
+    <button onclick="sendPrompt()">Submit</button>
+    <div id="responses"></div>
+
+    <script>
+        function sendPrompt() {
+            const userPrompt = document.getElementById('userPrompt').value;
+            fetch('/query', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ prompt: userPrompt })
+            })
+            .then(response => response.json())
+            .then(data => {
+                let responsesDiv = document.getElementById('responses');
+                responsesDiv.innerHTML = '';
+                for (let model in data) {
+                    responsesDiv.innerHTML += `<h2>${model}</h2><p>${data[model]}</p>`;
+                }
+            });
+        }
+    </script>
+</body>
+</html>

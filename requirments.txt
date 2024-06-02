@@ -1,0 +1,6 @@
+flask
+flask-socketio
+openai
+requests
+beautifulsoup4
+pinecone-client
